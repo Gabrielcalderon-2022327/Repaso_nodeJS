@@ -9,8 +9,8 @@ export async function listarProductos(): Promise<Producto[]> {
 }
 
 export async function agregarProducto(producto: Producto): Promise<void> {
-    validarProducto(producto);
     const productos: Producto[] = await leerProductos();
+    validarProducto(producto,productos);
     producto.id = productos.length + 1;
     productos.push(producto);
     await escribirProductos(productos);
@@ -37,8 +37,8 @@ export async function eliminarProducto(id: number): Promise<boolean> {
 }
 
 export async function editarProducto(id: number, producto: Producto): Promise<boolean> {
-    validarProducto(producto);
     const productos: Producto[] = await leerProductos();
+    validarProducto(producto, productos);
     if (id <= 0) return false;
 
     const index = productos.findIndex(p => p.id === id);

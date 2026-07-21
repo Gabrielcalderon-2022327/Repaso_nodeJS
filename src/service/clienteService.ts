@@ -9,8 +9,8 @@ export async function listarClientes(): Promise<Cliente[]> {
 }
 
 export async function agregarCliente(cliente: Cliente): Promise<void> {
-    validarCliente(cliente);
     const clientes: Cliente[] = await leerClientes();
+    validarCliente(cliente, clientes);
     cliente.id = clientes.length + 1;
     clientes.push(cliente);
     await escribirClientes(clientes);
@@ -36,8 +36,8 @@ export async function eliminarCliente(id: number): Promise<boolean> {
 
 
 export async function editarCliente(id: number, cliente: Cliente): Promise<boolean>{
-    validarCliente(cliente);
     const clientes: Cliente[] = await leerClientes();
+    validarCliente(cliente, clientes);
     if (id <= 0) return false;
 
     const index = clientes.findIndex(c => c.id === id);

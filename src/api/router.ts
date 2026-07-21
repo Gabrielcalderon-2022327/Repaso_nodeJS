@@ -1,5 +1,5 @@
 import * as http from "http";
-import { exception } from "../service/validator";
+import { ValidacionError } from "../service/validator";
 import * as clientesServices from "../service/clienteService";
 import * as productosServices from "../service/productoService";
 
@@ -19,8 +19,8 @@ async function readBody(req: http.IncomingMessage): Promise<unknown> {
 }
 
 function handleException(res: http.ServerResponse, error: unknown): void {
-    if (error instanceof exception) {
-        sendJSON(res, 400, { error: error.message });
+    if (error instanceof ValidacionError) {
+        sendJSON(res, 400, { error: error.message});
     } else if (error instanceof SyntaxError) {
         sendJSON(res, 400, { error: 'El body no es JSON válido' });
     } else {
