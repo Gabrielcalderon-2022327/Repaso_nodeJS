@@ -3,11 +3,11 @@ import { Producto } from "../models/producto";
 
 export async function leerProductos() {
     try {
-        const data = await readFile("./src/data/Clientes.json", "utf8");
+        const data = await readFile("./src/data/productos.json", "utf8");
         return JSON.parse(data);
     } catch (error: any) {
         if (error.code === "ENOENT") {
-            await writeFile("./src/data/Clientes.json", "[]", "utf8");
+            await writeFile("./src/data/productos.json", "[]", "utf8");
             return "El archivo no existe, creando uno nuevo...";
         }
 
@@ -22,8 +22,8 @@ export async function leerProductos() {
 
 export async function escribirProductos(productos: Producto[]) {
     try {
-        await writeFile("./src/data/Clientes.json", JSON.stringify(productos, null, 2));
+        await writeFile("./src/data/productos.json", JSON.stringify(productos, null, 2));
     } catch (error) {
-        console.error("Error al escribir el archivo de clientes:", error);
+        console.error("Error al escribir el archivo de productos:", error);
     }
 }
