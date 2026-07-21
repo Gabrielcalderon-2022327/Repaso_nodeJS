@@ -1,5 +1,5 @@
 import { readFile, writeFile } from "fs/promises";
-import { Producto } from "../routes/producto";
+import { Producto } from "../models/producto";
 
 export async function leerProductos() {
     try {
