@@ -1,5 +1,6 @@
 import { Producto } from "../models/producto";
 import { leerProductos, escribirProductos } from "../data/productoRepository";
+import { validarProducto } from "./validator";
 
 
 export async function listarProductos(): Promise<Producto[]> {
@@ -8,6 +9,7 @@ export async function listarProductos(): Promise<Producto[]> {
 }
 
 export async function agregarProducto(producto: Producto): Promise<void> {
+    validarProducto(producto);
     const productos: Producto[] = await leerProductos();
     producto.id = productos.length + 1;
     productos.push(producto);
@@ -35,6 +37,7 @@ export async function eliminarProducto(id: number): Promise<boolean> {
 }
 
 export async function editarProducto(id: number, producto: Producto): Promise<boolean> {
+    validarProducto(producto);
     const productos: Producto[] = await leerProductos();
     if (id <= 0) return false;
 

@@ -1,5 +1,6 @@
 import { Cliente } from "../models/cliente";
 import { leerClientes, escribirClientes } from "../data/clienteRepository";
+import { validarCliente } from "./validator";
 
 
 export async function listarClientes(): Promise<Cliente[]> {
@@ -8,6 +9,7 @@ export async function listarClientes(): Promise<Cliente[]> {
 }
 
 export async function agregarCliente(cliente: Cliente): Promise<void> {
+    validarCliente(cliente);
     const clientes: Cliente[] = await leerClientes();
     cliente.id = clientes.length + 1;
     clientes.push(cliente);
@@ -34,6 +36,7 @@ export async function eliminarCliente(id: number): Promise<boolean> {
 
 
 export async function editarCliente(id: number, cliente: Cliente): Promise<boolean>{
+    validarCliente(cliente);
     const clientes: Cliente[] = await leerClientes();
     if (id <= 0) return false;
 
