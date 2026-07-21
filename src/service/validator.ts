@@ -9,9 +9,6 @@ export class ValidacionError extends Error {
 }
 
 export function validarCliente(cliente: Cliente, clientes: Cliente[]): void {
-    if (cliente.correo){
-        throw new ValidacionError("El correo es obligatorio");
-    }
 
     if (!cliente.nombre.trim()) {
         throw new ValidacionError("El nombre es obligatorio");
