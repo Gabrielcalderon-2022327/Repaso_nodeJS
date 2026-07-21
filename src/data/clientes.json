@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "nombre": "Gabriel",
+        "apellido": "Calderón",
+        "correo": "gabriel.calderon@email.com",
+        "telefono": 55510001,
+        "direccion": "Zona 1, Ciudad de Guatemala",
+        "estado": "ACTIVO"
+    },
+    {
+        "id": 2,
+        "nombre": "María",
+        "apellido": "López",
+        "correo": "maria.lopez@email.com",
+        "telefono": 55510002,
+        "direccion": "Zona 5, Ciudad de Guatemala",
+        "estado": "ACTIVO"
+    },
+    {
+        "id": 3,
+        "nombre": "Carlos",
+        "apellido": "Ramírez",
+        "correo": "carlos.ramirez@email.com",
+        "telefono": 55510003,
+        "direccion": "Mixco, Guatemala",
+        "estado": "INACTIVO"
+    },
+    {
+        "id": 4,
+        "nombre": "Ana",
+        "apellido": "Pérez",
+        "correo": "ana.perez@email.com",
+        "telefono": 55510004,
+        "direccion": "Villa Nueva, Guatemala",
+        "estado": "ACTIVO"
+    },
+    {
+        "id": 5,
+        "nombre": "José",
+        "apellido": "Morales",
+        "correo": "jose.morales@email.com",
+        "telefono": 55510005,
+        "direccion": "Amatitlán, Guatemala",
+        "estado": "ACTIVO"
+    },
+    {
+        "id": 6,
+        "nombre": "Sofía",
+        "apellido": "García",
+        "correo": "sofia.garcia@email.com",
+        "telefono": 55510006,
+        "direccion": "Zona 10, Ciudad de Guatemala",
+        "estado": "ACTIVO"
+    },
+    {
+        "id": 7,
+        "nombre": "Luis",
+        "apellido": "Hernández",
+        "correo": "luis.hernandez@email.com",
+        "telefono": 55510007,
+        "direccion": "San Miguel Petapa, Guatemala",
+        "estado": "INACTIVO"
+    },
+    {
+        "id": 8,
+        "nombre": "Daniela",
+        "apellido": "Castillo",
+        "correo": "daniela.castillo@email.com",
+        "telefono": 55510008,
+        "direccion": "Zona 12, Ciudad de Guatemala",
+        "estado": "ACTIVO"
+    },
+    {
+        "id": 9,
+        "nombre": "Miguel",
+        "apellido": "Ruiz",
+        "correo": "miguel.ruiz@email.com",
+        "telefono": 55510009,
+        "direccion": "Escuintla, Guatemala",
+        "estado": "ACTIVO"
+    },
+    {
+        "id": 10,
+        "nombre": "Valeria",
+        "apellido": "Martínez",
+        "correo": "valeria.martinez@email.com",
+        "telefono": 55510010,
+        "direccion": "Antigua Guatemala, Sacatepéquez",
+        "estado": "ACTIVO"
+    }
+]
