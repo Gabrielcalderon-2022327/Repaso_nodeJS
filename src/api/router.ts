@@ -38,11 +38,13 @@ export async function router(req: http.IncomingMessage, res: http.ServerResponse
         if (url === "/clientes") {
             if (method == "GET") {
                 sendJSON(res, 200, await clientesServices.listarClientes());
+                return;
             }
             if (method == "POST") {
                 const body = await readBody(req);
                 const createdCliente = await clientesServices.agregarCliente(body as any);
                 sendJSON(res, 201, { message: "Cliente agregado correctamente", cliente: body });
+                return;
             }
         }
         //---------------------------CLIENTES CON ID
@@ -84,11 +86,13 @@ export async function router(req: http.IncomingMessage, res: http.ServerResponse
         if (url === "/productos") {
             if (method == "GET") {
                 sendJSON(res, 200, await productosServices.listarProductos());
+                return;
             }
             if (method == "POST") {
                 const body = await readBody(req);
                 const createdProducto = await productosServices.agregarProducto(body as any);
                 sendJSON(res, 201, { message: "Producto agregado correctamente", producto: body });
+                return;
             }
         }
         //---------------------------PRODUCTOS CON ID
